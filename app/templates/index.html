@@ -2,8 +2,10 @@
 
 {% block content %}
 <h1>С подключением, {{user.username}}</h1>
-{% for post in posts %}
-    <div>
+
+<section class="posts">
+    {% for post in posts %}
+    <div class="post">
         <p><b>{{ post.author.username }}</b> 
             сказал: {{ post.body }}
         </p> 
@@ -17,5 +19,7 @@
         {% endfor %}
         <br>
     </div>
+
 {% endfor %}
+</section>
 {% endblock %}

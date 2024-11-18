@@ -1,8 +1,9 @@
 from flask import render_template
 from app import app
+from app.forms import LoginForm
 
 @app.route('/')
-@app.route('/imdex')
+@app.route('/index')
 def index():
     user = {'username': 'Admin'}
     posts = [
@@ -31,4 +32,13 @@ def index():
         user = user, 
         posts = posts,
         comments = comments
+        )
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template(
+        'login.html', 
+        title = 'Вход', 
+        form = form
         )
