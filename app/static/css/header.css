@@ -1,0 +1,32 @@
+header{
+	width: 100%;
+	height: 60px;
+	background-color: #3498db;
+	text-align: center;
+	position: relative;
+	position: fixed;
+	top: 0;
+	overflow: hidden;
+}
+
+nav{
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  background-color: #164E7D;
+}
+
+a{
+  color: #fff;
+  display: inline-block;
+  padding: 10px 15px;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 2px;
+}  
+  
+a:hover{
+  box-shadow:0 0 0 1px #fff;
+}

@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if title %}
-            {{ title }} - Reqyz
-        {% else %}
-            Welcome to Reqyz
-        {% endif %}
-    </title>
-</head>
-<body>
-    <h1>С подключением, {{user.username}}</h1>
-    {% for post in posts %}
-        <div>
-            <p><b>{{ post.author.username }}</b> 
-                сказал: {{ post.body }}
-            </p> 
-            {% for comment in comments %}
-                {% if comment.post_id == post.id %}
-                <p>
-                    <b>{{ comment.author.username }} </b> 
-                    ответил: {{ comment.body }}
-                </p>
-                {% endif %}
-            {% endfor %}
-            <br>
-        </div>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>С подключением, {{user.username}}</h1>
+{% for post in posts %}
+    <div>
+        <p><b>{{ post.author.username }}</b> 
+            сказал: {{ post.body }}
+        </p> 
+        {% for comment in comments %}
+            {% if comment.post_id == post.id %}
+            <p>
+                <b>{{ comment.author.username }} </b> 
+                ответил: {{ comment.body }}
+            </p>
+            {% endif %}
+        {% endfor %}
+        <br>
+    </div>
+{% endfor %}
+{% endblock %}
