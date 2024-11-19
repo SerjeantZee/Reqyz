@@ -4,8 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
-  	<link type="text/css" href="{{ url_for('static', filename='css/header.css')}}" rel="stylesheet" />
-    
+		<link type="text/css" href="{{ url_for('static', filename='css/header.css')}}" rel="stylesheet" />
+		<link type="text/css" href="{{ url_for('static', filename='css/login.css')}}" rel="stylesheet" />
+		
     <title>
 			{% if title %} 
 				{{ title }} - Reqyz 
@@ -21,7 +22,6 @@
         <a href="{{ url_for('login') }}">Войти</a>
       </nav>
     </header>
-	<hr>
 	{% with messages = get_flashed_messages() %}
 	{% if messages %}
 	<ul>
